@@ -1,18 +1,30 @@
+
+var mouseUpX = 0;
+var mouseUpY = 0;
+
+var ellipseSize = 50;
+
 function setup() {
-	// create a place to draw
-	createCanvas(640, 360);
-	noStroke();
-	noLoop();
+	createCanvas(640, 480);
+	fill(50, 94, 255);
+	stroke(250, 250, 250);
+	strokeWeight(10);
 }
 
 function draw() {
-	// clear the background
-	background(150, 150, 50);
+	background(47, 12, 11);
 
-	// set a fill color
-	fill(255, 255, 255);
+	if (!mouseIsPressed) {
+		// if the mouse button is up, we need to
+		// store the location
+		mouseUpX = mouseX;
+		mouseUpY = mouseY;
+	} else {
+		// if it is down, we need to draw an ellipse
+		// at the stored location
+		line(mouseUpX, mouseUpY, mouseX, mouseY);
+		ellipse(mouseUpX, mouseUpY, ellipseSize, ellipseSize);
+	}
 
-	// draw the ellipse
-	var diameter = random(100, 200);
-	ellipse(320, 180, diameter, diameter);
+	ellipse(mouseX, mouseY, ellipseSize, ellipseSize);
 }
