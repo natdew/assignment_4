@@ -7,12 +7,9 @@ function setup() {
 
 function draw() {
 	// clear the background
-	background(150, 50, 150);
+	background(90, 90, 110);
 
-	// set a fill color
-	fill(255, 255, 255);
-
-	// draw the ellipse
-	var diameter = random(100, 200);
-	ellipse(320, 180, diameter, diameter);
+	// draw the rectangle
+	fill(0, 0, 0);
+	rect(40, 40, 200, 280);
 }
