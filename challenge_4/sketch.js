@@ -1,4 +1,3 @@
-// a simple p5 sketch that draws an ellipse
 var xPositions = [];
 var yPositions = [];
 var size = [];
@@ -20,7 +19,7 @@ function draw() {
 		xPositions[i] = xPositions[i] + random(-2, 2);
 		yPositions[i] = yPositions[i] + random(-2, 2);
 
-		ellipse(xPositions[i], yPositions[i], 10, 10);
+		ellipse(xPositions[i], yPositions[i], random(1, 50), random(1, 50));
 		fill(158, 250, 251)
 		noStroke();
 
