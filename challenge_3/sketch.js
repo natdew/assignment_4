@@ -1,26 +1,29 @@
 function setup() {
-	//create a place to draw
+	// create a place to draw
 	createCanvas(640, 360);
-	noStroke();
-	noLoop();
 }
 
+
 function draw() {
-	//clear the background
+	// clear the background
 	background(90, 90, 110);
 
-	//draw the rectangle
+	// draw the black rectangle
 	fill(0, 0, 0);
-	rect(40, 40, 200, 280);
+	rect(30, 30, 150, 300);
 
-	//draw the x
-	fill(150, 45, 45);
-	rect(30, 20, 100, 10, 20);
+	var positionX = mouseX;
+	var positionY = mouseY;
 
+	if (mouseX < 30) positionX = 30;
+	if (mouseY < 30) positionY = 30;
+	if (mouseX > 150) positionX = 180;
+	if (mouseY > 300) positionY = 330;
 
-
-
-
-
+	// draw the X
+	stroke(255, 0, 0);
+	strokeWeight(15);
+	line(positionX - 20, positionY - 20, positionX + 20, positionY + 20);
+	line(positionX + 20, positionY - 20, positionX - 20, positionY + 20);
 
 }
